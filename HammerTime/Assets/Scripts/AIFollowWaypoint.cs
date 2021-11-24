@@ -27,6 +27,7 @@ public class AIFollowWaypoint : MonoBehaviour
     {
         if (other.gameObject == currentWayPoint)
         {
+            //Set destination on the next waypoint
             int i = other.GetComponent<Node>().nodeNr + 1;
             currentWayPoint = player.GetComponent<TempPlayer>().nodes[i];
             agent.destination = currentWayPoint.transform.position;
