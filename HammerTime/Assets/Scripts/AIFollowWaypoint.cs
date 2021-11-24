@@ -13,7 +13,8 @@ public class AIFollowWaypoint : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        currentWayPoint = player.GetComponent<TempPlayer>().nodes[0];
+        int lastNode = player.GetComponent<TempPlayer>().nodes.Count - 1;
+        currentWayPoint = player.GetComponent<TempPlayer>().nodes[lastNode];
         agent.destination = currentWayPoint.transform.position;
     }
 
