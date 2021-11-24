@@ -11,10 +11,14 @@ public class TempPlayer : MonoBehaviour
 
     public List<GameObject> nodes = new List<GameObject>();
 
+    public int index = 0;
+
     private void Awake()
     {
         GameObject p = Instantiate(node, transform.position, Quaternion.identity);
         nodes.Add(p);
+        p.GetComponent<Node>().nodeNr = index;
+        index++;
     }
 
     // Start is called before the first frame update
@@ -35,5 +39,7 @@ public class TempPlayer : MonoBehaviour
     {
         GameObject p = Instantiate(node, transform.position, Quaternion.identity);
         nodes.Add(p);
+        p.GetComponent<Node>().nodeNr = index;
+        index++;
     }
 }
