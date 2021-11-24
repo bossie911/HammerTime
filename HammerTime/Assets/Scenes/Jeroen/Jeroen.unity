@@ -296,6 +296,11 @@ PrefabInstance:
       propertyPath: floatingJoystick
       value: 
       objectReference: {fileID: 1704010710}
+    - target: {fileID: 476450292391150706, guid: 6d1fba0a581bb1a4db3828ca5671632d,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1831316879253229953, guid: 6d1fba0a581bb1a4db3828ca5671632d,
         type: 3}
       propertyPath: m_RootOrder
@@ -304,17 +309,17 @@ PrefabInstance:
     - target: {fileID: 1831316879253229953, guid: 6d1fba0a581bb1a4db3828ca5671632d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.746223
+      value: 3.009
       objectReference: {fileID: 0}
     - target: {fileID: 1831316879253229953, guid: 6d1fba0a581bb1a4db3828ca5671632d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71
+      value: 0.998
       objectReference: {fileID: 0}
     - target: {fileID: 1831316879253229953, guid: 6d1fba0a581bb1a4db3828ca5671632d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.87
+      value: -1.595
       objectReference: {fileID: 0}
     - target: {fileID: 1831316879253229953, guid: 6d1fba0a581bb1a4db3828ca5671632d,
         type: 3}

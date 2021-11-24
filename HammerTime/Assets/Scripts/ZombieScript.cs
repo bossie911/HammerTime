@@ -35,8 +35,8 @@ public class ZombieScript : MonoBehaviour
             if (myZombieState == ZombieState.Sleeping) {
                 myZombieState = ZombieState.Chasing;
                 myAgent.enabled = true;
-                myRB.isKinematic = false;
                 chasingScript.enabled = true;
+                GetComponents<Collider>()[1].enabled = false;
                 UpdateZombieApperance();
             }
         }
