@@ -8,7 +8,6 @@ public class AIFollowWaypoint : MonoBehaviour
     public NavMeshAgent agent;
     GameObject player;
     GameObject currentWayPoint;
-    //int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +27,6 @@ public class AIFollowWaypoint : MonoBehaviour
     {
         if (other.gameObject == currentWayPoint)
         {
-            //index++;
             int i = other.GetComponent<Node>().nodeNr + 1;
             currentWayPoint = player.GetComponent<TempPlayer>().nodes[i];
             agent.destination = currentWayPoint.transform.position;

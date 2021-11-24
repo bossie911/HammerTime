@@ -5,7 +5,7 @@ using UnityEngine;
 public class TempPlayer : MonoBehaviour
 {
     public Rigidbody rb;
-    float speed = 8;
+    float speed = 1;
 
     public GameObject node;
 
