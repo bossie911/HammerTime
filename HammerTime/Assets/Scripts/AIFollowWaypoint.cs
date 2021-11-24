@@ -7,29 +7,46 @@ public class AIFollowWaypoint : MonoBehaviour
 {
     public NavMeshAgent agent;
     GameObject player;
-    GameObject currentWayPoint;
+    public GameObject currentWayPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        currentWayPoint = player.GetComponent<TempPlayer>().nodes[0];
+        int lastNode = player.GetComponent<TempPlayer>().nodes.Count - 1;
+        currentWayPoint = player.GetComponent<TempPlayer>().nodes[lastNode];
         agent.destination = currentWayPoint.transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if(currentWayPoint.tag == "Player")
+        {
+            agent.destination = currentWayPoint.transform.position;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == currentWayPoint)
+
+        if (other.gameObject == currentWayPoint && other.gameObject.tag != "Player")
         {
-            int i = other.GetComponent<Node>().nodeNr + 1;
-            currentWayPoint = player.GetComponent<TempPlayer>().nodes[i];
-            agent.destination = currentWayPoint.transform.position;
+            //Check if collided node is the last one
+            if (other.GetComponent<Node>().nodeNr == player.GetComponent<TempPlayer>().nodes.Count - 1)
+            {
+                currentWayPoint = player;
+                agent.destination = currentWayPoint.transform.position;
+                player.GetComponent<TempPlayer>().chasingZombies.Add(gameObject);
+            }
+            else
+            {
+                //Set destination on the next waypoint
+                int nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
+                currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
+                agent.destination = currentWayPoint.transform.position;
+            }
+
         }
     }
 }
