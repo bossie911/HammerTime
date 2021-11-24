@@ -32,4 +32,11 @@ public class ZombieScript : MonoBehaviour
     {
 
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            myZombieState++;
+        }
+    }
 }
