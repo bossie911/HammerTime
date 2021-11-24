@@ -5,12 +5,12 @@ using UnityEngine;
 public class JoystickPlayerExample : MonoBehaviour
 {
     public float speed;
-    public VariableJoystick variableJoystick;
+    public FloatingJoystick floatingJoystick;
     public Rigidbody rb;
 
     public void FixedUpdate()
     {
-        Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
-        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        Vector3 direction = Vector3.forward * floatingJoystick.Vertical + Vector3.right * floatingJoystick.Horizontal;
+        rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.Impulse);
     }
 }

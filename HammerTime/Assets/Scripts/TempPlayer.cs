@@ -24,15 +24,6 @@ public class TempPlayer : MonoBehaviour
     {
         InvokeRepeating("SpawnWayPoints", 3, 3);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        var locVel = transform.InverseTransformDirection(rb.velocity);
-        locVel.z = speed;
-        rb.velocity = transform.TransformDirection(locVel);
-    }
-
     void SpawnWayPoints()
     {
         GameObject p = Instantiate(node, transform.position, Quaternion.identity);
