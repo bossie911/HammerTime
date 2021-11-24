@@ -432,5 +432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HammerPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1604631208624190828, guid: f700518a332727942a3f948aff382e58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f700518a332727942a3f948aff382e58, type: 3}
