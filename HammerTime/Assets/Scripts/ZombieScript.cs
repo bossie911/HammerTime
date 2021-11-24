@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ZombieScript : MonoBehaviour
     [SerializeField] private Material[] colorMaterials;
     [SerializeField] private Renderer myRenderer;
 
+    private NavMeshAgent myAgent;
     private AIFollowWaypoint chasingScript;
     private Rigidbody myRB;
 
@@ -18,6 +20,7 @@ public class ZombieScript : MonoBehaviour
         myZombieState = ZombieState.Sleeping;
         chasingScript = GetComponent<AIFollowWaypoint>();
         myRB = GetComponent<Rigidbody>();
+        myAgent = GetComponent<NavMeshAgent>();
     }
 
     public void UpdateZombieApperance()
@@ -31,7 +34,7 @@ public class ZombieScript : MonoBehaviour
         {
             if (myZombieState == ZombieState.Sleeping) {
                 myZombieState = ZombieState.Chasing;
-                myRB.useGravity = true;
+                myAgent.enabled = true;
                 myRB.isKinematic = false;
                 chasingScript.enabled = true;
                 UpdateZombieApperance();
