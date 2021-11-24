@@ -10,33 +10,32 @@ public class ZombieScript : MonoBehaviour
     [SerializeField] private Material[] colorMaterials;
     [SerializeField] private Renderer myRenderer;
 
-    
+    private AIFollowWaypoint chasingScript;
+    private Rigidbody myRB;
+
     void Start()
     {
         myZombieState = ZombieState.Sleeping;
+        chasingScript = GetComponent<AIFollowWaypoint>();
+        myRB = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-
-    }
     public void UpdateZombieApperance()
     {
         myRenderer.material = colorMaterials[(int)myZombieState];
     }
-    private void ChasingBehaviour()
-    {
 
-    }
-    private void FleeingBehaviour()
-    {
-
-    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            myZombieState++;
+            if (myZombieState == ZombieState.Sleeping) {
+                myZombieState = ZombieState.Chasing;
+                myRB.useGravity = true;
+                myRB.isKinematic = false;
+                chasingScript.enabled = true;
+                UpdateZombieApperance();
+            }
         }
     }
 }
