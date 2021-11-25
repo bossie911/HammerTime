@@ -25,6 +25,9 @@ public class JoystickPlayerExample : MonoBehaviour
     private IEnumerator HammerTimer()
     {
         //do stuff with hammer delay and a bool. mabye make hammer script.
-        yield return null;
+        
+        //rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.Impulse);
+        rb.velocity = direction * speed;
+		yield return null;
     }
 }

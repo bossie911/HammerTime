@@ -8,6 +8,8 @@ public class AIFollowWaypoint : MonoBehaviour
     public NavMeshAgent agent;
     GameObject player;
     public GameObject currentWayPoint;
+    float setDestinationInterval = 0.1f;
+    float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,14 @@ public class AIFollowWaypoint : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if(currentWayPoint.tag == "Player")
+        timer += Time.deltaTime;
+
+        if(currentWayPoint.tag == "Player" && timer >= setDestinationInterval)
         {
             agent.destination = currentWayPoint.transform.position;
+            timer = 0;
         }
     }
 
