@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 3523331104840775505}
+  currentWayPoint: {fileID: 0}
 --- !u!195 &3523331104840775505
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -443,7 +444,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4831290010428779320}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.15
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50

@@ -22,7 +22,7 @@ public class TempPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnWayPoints", 3, 3);
+        InvokeRepeating("SpawnWayPoints", 0.5f, 0.5f);
     }
     void SpawnWayPoints()
     {
@@ -31,17 +31,21 @@ public class TempPlayer : MonoBehaviour
         p.GetComponent<Node>().nodeNr = index;
         index++;
 
-        /*
+        
         //When spawing nodes we want to check if any zombies are currently chasing the player if they do they need to chase the last node
         if(chasingZombies.Count > 0)
         {
-            foreach(GameObject zombie in chasingZombies)
+            foreach(GameObject zombie in chasingZombies.ToArray())
             {
-                zombie.GetComponent<AIFollowWaypoint>().agent.destination = p.transform.position;
-                chasingZombies.Remove(zombie);
-                Debug.Log("Pasta");
+                if (zombie)
+                {
+                    zombie.GetComponent<AIFollowWaypoint>().agent.destination = p.transform.position;
+                    zombie.GetComponent<AIFollowWaypoint>().currentWayPoint = p;
+                    chasingZombies.Remove(zombie);
+                    Debug.Log("Pasta");
+                }
             }
         }
-        */
+        
     }
 }
