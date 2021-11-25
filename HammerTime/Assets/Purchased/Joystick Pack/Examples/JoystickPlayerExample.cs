@@ -18,18 +18,11 @@ public class JoystickPlayerExample : MonoBehaviour
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.Impulse);
         
         transform.rotation = Quaternion.LookRotation(direction);
-
-        if (Input.GetKeyDown("space"))
-        {
-            Instantiate(Explosion, transform.position + direction / 2, transform.rotation);
+        if (HammerScript.instance.isActive) {
+            if (Input.GetKeyDown("space"))
+            {
+                Instantiate(Explosion, transform.position + direction / 2, transform.rotation);
+            }
         }
-    }
-    private IEnumerator HammerTimer()
-    {
-        //do stuff with hammer delay and a bool. mabye make hammer script.
-        
-        //rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.Impulse);
-        //rb.velocity = direction * speed;
-		yield return null;
     }
 }
