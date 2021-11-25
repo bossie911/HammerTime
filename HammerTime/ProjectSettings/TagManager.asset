@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hammer
   - Zombie
+  - HammerPickup
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,6 @@ public class HammerScript : MonoBehaviour
     }
     void Update()
     {
-        //an event that will be called on pickup must set isActive to true. 
         if (isActive)
         {
             timer += Time.deltaTime;
@@ -32,5 +31,10 @@ public class HammerScript : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+    }
+    public void setActive()
+    {
+        isActive = true;
+        gameObject.SetActive(true);
     }
 }
