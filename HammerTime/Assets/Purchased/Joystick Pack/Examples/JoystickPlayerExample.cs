@@ -27,7 +27,7 @@ public class JoystickPlayerExample : MonoBehaviour
         //do stuff with hammer delay and a bool. mabye make hammer script.
         
         //rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.Impulse);
-        rb.velocity = direction * speed;
+        //rb.velocity = direction * speed;
 		yield return null;
     }
 }

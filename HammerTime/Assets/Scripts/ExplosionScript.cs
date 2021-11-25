@@ -31,6 +31,7 @@ public class ExplosionScript : MonoBehaviour
                     {
                         rb.useGravity = true;
                         NavMeshAgent agent = hit.GetComponent<NavMeshAgent>();
+                        TempPlayer.instance.chasingZombies.Remove(hit.gameObject);
                         agent.enabled = false;
                         rb.AddExplosionForce(power, explosionPos, radius, upwardsModifier);
                     }

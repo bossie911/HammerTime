@@ -27,8 +27,11 @@ public class AIFollowWaypoint : MonoBehaviour
 
         if(currentWayPoint.tag == "Player" && timer >= setDestinationInterval)
         {
-            agent.destination = currentWayPoint.transform.position;
-            timer = 0;
+            if (agent.enabled == true)
+            {
+                agent.destination = currentWayPoint.transform.position;
+                timer = 0;
+            }
         }
     }
 
@@ -46,10 +49,13 @@ public class AIFollowWaypoint : MonoBehaviour
             }
             else
             {
-                //Set destination on the next waypoint
-                int nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
-                currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
-                agent.destination = currentWayPoint.transform.position;
+                if (agent.enabled == true)
+                {
+                    //Set destination on the next waypoint
+                    int nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
+                    currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
+                    agent.destination = currentWayPoint.transform.position;
+                }
             }
 
         }

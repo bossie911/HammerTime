@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TempPlayer : MonoBehaviour
 {
+    public static TempPlayer instance;
     public Rigidbody rb;
     float speed = 1;
     public GameObject node;
@@ -22,6 +23,10 @@ public class TempPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         InvokeRepeating("SpawnWayPoints", 0.5f, 0.5f);
     }
     void SpawnWayPoints()
