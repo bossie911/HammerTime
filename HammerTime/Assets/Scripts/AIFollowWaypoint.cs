@@ -11,6 +11,8 @@ public class AIFollowWaypoint : MonoBehaviour
     float setDestinationInterval = 0.1f;
     float timer = 0f;
 
+    public bool isChasing = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +48,18 @@ public class AIFollowWaypoint : MonoBehaviour
             }
             else
             {
-                //Set destination on the next waypoint
-                int nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
+                int nextNodeNr;
+                if (isChasing)
+                {
+                    //Set destination on the next waypoint
+                    nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
+                }
+                else
+                {
+                    nextNodeNr = other.GetComponent<Node>().nodeNr - 1;
+                    Debug.Log("Pasta");
+                }
+
                 currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
                 agent.destination = currentWayPoint.transform.position;
             }
