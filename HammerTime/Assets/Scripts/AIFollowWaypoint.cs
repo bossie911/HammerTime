@@ -8,6 +8,8 @@ public class AIFollowWaypoint : MonoBehaviour
     public NavMeshAgent agent;
     GameObject player;
     public GameObject currentWayPoint;
+    float setDestinationInterval = 0.1f;
+    float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +17,24 @@ public class AIFollowWaypoint : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         int lastNode = player.GetComponent<TempPlayer>().nodes.Count - 1;
         currentWayPoint = player.GetComponent<TempPlayer>().nodes[lastNode];
-        agent.destination = currentWayPoint.transform.position;
+        if (agent.enabled == true)
+        {
+            agent.destination = currentWayPoint.transform.position;
+        }
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if(currentWayPoint.tag == "Player")
+        timer += Time.deltaTime;
+
+        if(currentWayPoint.tag == "Player" && timer >= setDestinationInterval)
         {
-            agent.destination = currentWayPoint.transform.position;
+            if (agent.enabled == true)
+            {
+                agent.destination = currentWayPoint.transform.position;
+                timer = 0;
+            }
         }
     }
 
@@ -41,10 +52,13 @@ public class AIFollowWaypoint : MonoBehaviour
             }
             else
             {
-                //Set destination on the next waypoint
-                int nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
-                currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
-                agent.destination = currentWayPoint.transform.position;
+                if (agent.enabled == true)
+                {
+                    //Set destination on the next waypoint
+                    int nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
+                    currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
+                    agent.destination = currentWayPoint.transform.position;
+                }
             }
 
         }

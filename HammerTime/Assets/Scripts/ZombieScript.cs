@@ -19,16 +19,15 @@ public class ZombieScript : MonoBehaviour
     {
         myZombieState = ZombieState.Sleeping;
         chasingScript = GetComponent<AIFollowWaypoint>();
-        myRB = GetComponent<Rigidbody>();
         myAgent = GetComponent<NavMeshAgent>();
         GetComponent<Animator>().SetBool("Idle", true);
+        myRB = GetComponent<Rigidbody>();
     }
 
     public void UpdateZombieApperance()
     {
         myRenderer.material = colorMaterials[(int)myZombieState];
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -37,11 +36,16 @@ public class ZombieScript : MonoBehaviour
                 myZombieState = ZombieState.Chasing;
                 myAgent.enabled = true;
                 chasingScript.enabled = true;
+                GetComponents<Collider>()[0].enabled = true;
                 GetComponents<Collider>()[1].enabled = false;
                 GetComponent<Animator>().SetBool("Idle", false);
                 GetComponent<Animator>().SetBool("Run", true);
                 UpdateZombieApperance();
             }
         }
+    }
+    public ZombieState GetZombieState()
+    {
+        return myZombieState;
     }
 }

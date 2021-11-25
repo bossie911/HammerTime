@@ -128,6 +128,7 @@ MonoBehaviour:
   rb: {fileID: 1831316879253229982}
   node: {fileID: 2867249566024516261, guid: f2f6bdb5efce4cd4fbd29e2c7e9721b3, type: 3}
   nodes: []
+  chasingZombies: []
   index: 0
 --- !u!114 &1201012205
 MonoBehaviour:
@@ -141,6 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37d705c8e9115e439ec799186182634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Explosion: {fileID: 6209835449091369287, guid: b194784be6118834fbc84347077fc1ce,
+    type: 3}
   speed: 4
   floatingJoystick: {fileID: 0}
   rb: {fileID: 1831316879253229982}
@@ -154,7 +157,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.49999997
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
