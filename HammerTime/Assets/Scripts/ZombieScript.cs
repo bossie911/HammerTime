@@ -27,16 +27,6 @@ public class ZombieScript : MonoBehaviour
     {
         myRenderer.material = colorMaterials[(int)myZombieState];
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Hammer"))
-        {
-            if (myZombieState == ZombieState.Fleeing) {
-                Vector3 launchDir = new Vector3(0,-1,1);
-                myRB.AddForce(launchDir, ForceMode.Force);
-            }
-        }
-    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
