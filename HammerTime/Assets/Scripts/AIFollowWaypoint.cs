@@ -57,11 +57,14 @@ public class AIFollowWaypoint : MonoBehaviour
                 else
                 {
                     nextNodeNr = other.GetComponent<Node>().nodeNr - 1;
-                    Debug.Log("Pasta");
                 }
 
-                currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
-                agent.destination = currentWayPoint.transform.position;
+                if (nextNodeNr >= 0)
+                {
+                    currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
+                    agent.destination = currentWayPoint.transform.position;
+                }
+
             }
 
         }
