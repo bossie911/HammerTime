@@ -19,15 +19,24 @@ public class ZombieScript : MonoBehaviour
     {
         myZombieState = ZombieState.Sleeping;
         chasingScript = GetComponent<AIFollowWaypoint>();
-        myRB = GetComponent<Rigidbody>();
         myAgent = GetComponent<NavMeshAgent>();
+        myRB = GetComponent<Rigidbody>();
     }
 
     public void UpdateZombieApperance()
     {
         myRenderer.material = colorMaterials[(int)myZombieState];
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hammer"))
+        {
+            if (myZombieState == ZombieState.Fleeing) {
+                Vector3 launchDir = new Vector3(0,-1,1);
+                myRB.AddForce(launchDir, ForceMode.Force);
+            }
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -41,5 +50,9 @@ public class ZombieScript : MonoBehaviour
                 UpdateZombieApperance();
             }
         }
+    }
+    public ZombieState GetZombieState()
+    {
+        return myZombieState;
     }
 }

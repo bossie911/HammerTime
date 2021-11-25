@@ -128,6 +128,7 @@ MonoBehaviour:
   rb: {fileID: 1831316879253229982}
   node: {fileID: 2867249566024516261, guid: f2f6bdb5efce4cd4fbd29e2c7e9721b3, type: 3}
   nodes: []
+  chasingZombies: []
   index: 0
 --- !u!114 &1201012205
 MonoBehaviour:
