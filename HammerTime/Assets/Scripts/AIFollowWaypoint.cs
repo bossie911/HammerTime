@@ -17,7 +17,10 @@ public class AIFollowWaypoint : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         int lastNode = player.GetComponent<TempPlayer>().nodes.Count - 1;
         currentWayPoint = player.GetComponent<TempPlayer>().nodes[lastNode];
-        agent.destination = currentWayPoint.transform.position;
+        if (agent.enabled == true)
+        {
+            agent.destination = currentWayPoint.transform.position;
+        }
     }
 
     // Update is called once per frame

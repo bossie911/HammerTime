@@ -16,10 +16,12 @@ public class JoystickPlayerExample : MonoBehaviour
     {
         Vector3 direction = Vector3.forward * floatingJoystick.Vertical + Vector3.right * floatingJoystick.Horizontal;
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.Impulse);
+        
+        transform.rotation = Quaternion.LookRotation(direction);
 
         if (Input.GetKeyDown("space"))
         {
-            Instantiate(Explosion, transform.position + Vector3.forward / 2, transform.rotation);
+            Instantiate(Explosion, transform.position + direction / 2, transform.rotation);
         }
     }
     private IEnumerator HammerTimer()
