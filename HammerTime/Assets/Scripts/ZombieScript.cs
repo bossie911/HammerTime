@@ -36,6 +36,7 @@ public class ZombieScript : MonoBehaviour
                 myZombieState = ZombieState.Chasing;
                 myAgent.enabled = true;
                 chasingScript.enabled = true;
+                GetComponents<Collider>()[0].enabled = true;
                 GetComponents<Collider>()[1].enabled = false;
                 UpdateZombieApperance();
             }
