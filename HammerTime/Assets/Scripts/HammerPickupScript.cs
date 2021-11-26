@@ -11,7 +11,7 @@ public class HammerPickupScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             HammerScript.instance.hammerTime += timeValue;
-            HammerScript.instance.setActive();
+            HammerScript.instance.StartHammering();
             Destroy(gameObject);
         }
     }
