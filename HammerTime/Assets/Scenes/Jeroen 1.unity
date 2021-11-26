@@ -191,7 +191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732551807
 GameObject:
@@ -294,7 +294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1201012205, guid: 6d1fba0a581bb1a4db3828ca5671632d, type: 3}
       propertyPath: speed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1201012205, guid: 6d1fba0a581bb1a4db3828ca5671632d, type: 3}
       propertyPath: floatingJoystick
@@ -308,7 +308,7 @@ PrefabInstance:
     - target: {fileID: 1831316879253229953, guid: 6d1fba0a581bb1a4db3828ca5671632d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1831316879253229953, guid: 6d1fba0a581bb1a4db3828ca5671632d,
         type: 3}

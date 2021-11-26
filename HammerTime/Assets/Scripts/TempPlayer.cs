@@ -47,7 +47,6 @@ public class TempPlayer : MonoBehaviour
                     zombie.GetComponent<AIFollowWaypoint>().agent.destination = p.transform.position;
                     zombie.GetComponent<AIFollowWaypoint>().currentWayPoint = p;
                     chasingZombies.Remove(zombie);
-                    Debug.Log("Pasta");
                 }
             }
         }

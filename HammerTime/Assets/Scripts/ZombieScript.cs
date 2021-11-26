@@ -20,6 +20,7 @@ public class ZombieScript : MonoBehaviour
         myZombieState = ZombieState.Sleeping;
         chasingScript = GetComponent<AIFollowWaypoint>();
         myAgent = GetComponent<NavMeshAgent>();
+        GetComponent<Animator>().SetBool("Idle", true);
         myRB = GetComponent<Rigidbody>();
     }
 
@@ -37,6 +38,8 @@ public class ZombieScript : MonoBehaviour
                 chasingScript.enabled = true;
                 GetComponents<Collider>()[0].enabled = true;
                 GetComponents<Collider>()[1].enabled = false;
+                GetComponent<Animator>().SetBool("Idle", false);
+                GetComponent<Animator>().SetBool("Run", true);
                 UpdateZombieApperance();
             }
         }
