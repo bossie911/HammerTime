@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeValue: 5
-  respawnDelay: 1
+  respawnDelay: 5
 --- !u!23 &8893457969749518432
 MeshRenderer:
   m_ObjectHideFlags: 0
