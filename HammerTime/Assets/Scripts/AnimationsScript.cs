@@ -24,23 +24,6 @@ public class AnimationsScript : MonoBehaviour
             animator.SetBool("IdleLegs", true);
             animator.SetBool("IdleArms", true);
         }
-
-        if(smash)
-        {
-            hammer.SetActive(true);
-            animator.SetBool("Attack", true);
-            animator.SetBool("RunArms", false);
-            animator.SetBool("IdleArms", false);
-        }
-        else
-        {
-            hammer.SetActive(false);
-        }
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            smash = !smash;
-        }
     }
 
     public void SetAnimation(GameObject animObject, string animtionName)

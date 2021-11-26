@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 3b40bdd03d3ea694bb840a833808cf04, type: 2}
+--- !u!1 &66200141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1831316879253229957, guid: 6d1fba0a581bb1a4db3828ca5671632d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1201012202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &726864039
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +385,7 @@ GameObject:
   - component: {fileID: 1843216981}
   - component: {fileID: 1843216980}
   - component: {fileID: 1843216979}
+  - component: {fileID: 1843216982}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -451,6 +458,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 52.737003, y: 0, z: 0}
+--- !u!114 &1843216982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843216978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db75e822dc262c42b98176de631c246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 66200141}
+  zoomInDuration: 1
+  tempbool: 0
 --- !u!1 &1898614695 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1695708319051800301, guid: d86a32d2b8eff8648bc9ac2df26e6ce1,
