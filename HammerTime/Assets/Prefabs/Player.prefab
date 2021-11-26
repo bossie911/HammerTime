@@ -142,7 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37d705c8e9115e439ec799186182634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  Explosion: {fileID: 6209835449091369287, guid: b194784be6118834fbc84347077fc1ce,
+    type: 3}
+  speed: 4
   floatingJoystick: {fileID: 0}
   rb: {fileID: 1831316879253229982}
 --- !u!195 &5714945609838025460

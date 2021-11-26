@@ -23,6 +23,10 @@ public class AIFollowWaypoint : MonoBehaviour
         agent.destination = currentWayPoint.transform.position;
 
         InvokeRepeating("TurnCollOff", 5f, 3f);
+        if (agent.enabled == true)
+        {
+            agent.destination = currentWayPoint.transform.position;
+        }
     }
 
     // Update is called once per frame
@@ -32,8 +36,11 @@ public class AIFollowWaypoint : MonoBehaviour
 
         if(currentWayPoint.tag == "Player" && timer >= setDestinationInterval)
         {
-            agent.destination = currentWayPoint.transform.position;
-            timer = 0;
+            if (agent.enabled == true)
+            {
+                agent.destination = currentWayPoint.transform.position;
+                timer = 0;
+            }
         }
     }
 
@@ -67,7 +74,13 @@ public class AIFollowWaypoint : MonoBehaviour
                     currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
                     agent.destination = currentWayPoint.transform.position;
                 }
-
+                if (agent.enabled == true)
+                {
+                    //Set destination on the next waypoint
+                    int nextNodeNr = other.GetComponent<Node>().nodeNr + 1;
+                    currentWayPoint = player.GetComponent<TempPlayer>().nodes[nextNodeNr];
+                    agent.destination = currentWayPoint.transform.position;
+                }
             }
 
         }
