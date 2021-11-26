@@ -7,8 +7,6 @@ public class DeathLerp : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private int zoomInDuration;
 
-    private Vector3 offset;
-
     public bool tempbool;
     private void Update()
     {
@@ -20,6 +18,7 @@ public class DeathLerp : MonoBehaviour
     }
     private IEnumerator OnDeathLerpPlayer()
     {
+        Vector3 offset = new Vector3(0,1.5f,-1);
         float elapsed = 0;
         while (elapsed < zoomInDuration)
         {
