@@ -296,6 +296,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1048286267, guid: 6d1fba0a581bb1a4db3828ca5671632d, type: 3}
+      propertyPath: UIObject
+      value: 
+      objectReference: {fileID: 1898614695}
     - target: {fileID: 1201012205, guid: 6d1fba0a581bb1a4db3828ca5671632d, type: 3}
       propertyPath: floatingJoystick
       value: 
@@ -557,6 +561,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 52.737003, y: 0, z: 0}
+--- !u!1 &1898614695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2688261744464572667, guid: ff0ef4e65de11ec49b55af5705d51103,
+    type: 3}
+  m_PrefabInstance: {fileID: 6201415958156232310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1904697353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -808,6 +818,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.ctime1
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.key0.r
+      value: 0.19131923
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.key1.g
+      value: 0.989607
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894635285930187317, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: color.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2688261744464572667, guid: ff0ef4e65de11ec49b55af5705d51103,
         type: 3}
       propertyPath: m_Name
@@ -815,8 +875,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121548624742042209, guid: ff0ef4e65de11ec49b55af5705d51103,
         type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121548624742042209, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121548624742042209, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121548624742042209, guid: ff0ef4e65de11ec49b55af5705d51103,
+        type: 3}
       propertyPath: m_FillAmount
-      value: 0.672
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff0ef4e65de11ec49b55af5705d51103, type: 3}
@@ -8598,6 +8673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.00000066216194
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819485094381042155, guid: a44281290d619ac42b2d3cb10d1f3002,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.0000000060535728
       objectReference: {fileID: 0}
     - target: {fileID: 2819485094451673809, guid: a44281290d619ac42b2d3cb10d1f3002,
         type: 3}
