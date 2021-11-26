@@ -49,6 +49,7 @@ public class HammerScript : MonoBehaviour
                 isActive = false;
                 UIObject.SetActive(false);
                 gameObject.SetActive(false);
+                GameEvents.current.StartChasing();
             }
             else
             {

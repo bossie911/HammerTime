@@ -699,6 +699,7 @@ GameObject:
   - component: {fileID: 4831290010421516432}
   - component: {fileID: 3896175043882362457}
   - component: {fileID: 7100788308208711508}
+  - component: {fileID: 5363705607146529825}
   - component: {fileID: 3523331104840775505}
   - component: {fileID: 4513437055466584303}
   - component: {fileID: 2955079516137609573}
@@ -779,6 +780,18 @@ MonoBehaviour:
   currentWayPoint: {fileID: 0}
   isChasing: 1
   sphereCol: {fileID: 4513437055466584303}
+--- !u!114 &5363705607146529825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831290010428779320}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9004cc314d9b74e9126255cdcfcef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &3523331104840775505
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1661,7 +1674,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000006519175, y: 0.2660974, z: -0.0000000060535723}
+  m_ConnectedAnchor: {x: 0.0000000065191754, y: 0.2660974, z: -0.0000000060535728}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -1770,7 +1783,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000005587924, y: 0.26609734, z: 0.0000000027939664}
+  m_ConnectedAnchor: {x: -0.0000000055879243, y: 0.26609734, z: 0.0000000027939666}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:

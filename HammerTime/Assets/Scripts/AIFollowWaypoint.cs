@@ -22,7 +22,7 @@ public class AIFollowWaypoint : MonoBehaviour
         currentWayPoint = player.GetComponent<TempPlayer>().nodes[lastNode];
         agent.destination = currentWayPoint.transform.position;
 
-        InvokeRepeating("TurnCollOff", 5f, 3f);
+        InvokeRepeating("TurnCollOff", 1f, 1f);
         if (agent.enabled == true)
         {
             agent.destination = currentWayPoint.transform.position;
@@ -87,7 +87,7 @@ public class AIFollowWaypoint : MonoBehaviour
 
     IEnumerator ResetCol()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForFixedUpdate();
         sphereCol.enabled = true;
     }
 }

@@ -22,6 +22,8 @@ public class HammerPickupScript : MonoBehaviour
             HammerScript.instance.hammerTime += timeValue;
             HammerScript.instance.StartHammering();
             StartCoroutine(Respawn());
+            GameEvents.current.StartFleeing();
+            Destroy(gameObject);
         }
     }
     private IEnumerator Respawn()
