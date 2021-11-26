@@ -16,6 +16,7 @@ public class HammerScript : MonoBehaviour
 
     public bool isActive;
     public float hammerTime;
+    [SerializeField] private AnimationsScript animations;
     private void Start()
     {
         if (instance == null)
@@ -25,6 +26,7 @@ public class HammerScript : MonoBehaviour
         playerController = GetComponentInParent<JoystickPlayerExample>();
         gameObject.SetActive(false);
         UIObject.SetActive(false);
+        animations.GetComponent<AnimationsScript>();
     }
     private void FixedUpdate()
     {
@@ -41,6 +43,7 @@ public class HammerScript : MonoBehaviour
             
             if (timer > hammerTime)
             {
+                animations.smash = false;
                 timer = 0;
                 hammerTime = 0;
                 isActive = false;
@@ -57,6 +60,7 @@ public class HammerScript : MonoBehaviour
     }
     public void StartHammering()
     {
+        animations.smash = true;
         isActive = true;
         gameObject.SetActive(true);
         UIObject.SetActive(true);

@@ -6,8 +6,7 @@ public class AnimationsScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private GameObject hammer;
-    private bool smash;
+    [HideInInspector] public bool smash;
 
     void Update()
     {
@@ -23,6 +22,17 @@ public class AnimationsScript : MonoBehaviour
             TurnOffBools(animator);
             animator.SetBool("IdleLegs", true);
             animator.SetBool("IdleArms", true);
+        }
+
+        if(smash)
+        {
+            animator.SetBool("Attack", true);
+            animator.SetBool("RunArms", false);
+            animator.SetBool("IdleArms", false);
+        }
+        else
+        {
+            animator.SetBool("Attack", false);
         }
     }
 

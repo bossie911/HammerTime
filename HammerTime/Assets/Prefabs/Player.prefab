@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1671817377023348293}
   rb: {fileID: 1831316879253229982}
-  hammer: {fileID: 1048286266}
+  smash: 0
 --- !u!1 &8348335093426864641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1255,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6209835449091369287, guid: b194784be6118834fbc84347077fc1ce,
         type: 3}
+    - target: {fileID: 7883116691139366790, guid: 34d48e5dbed2e7d4c9a6b687af6a57a9,
+        type: 3}
+      propertyPath: animations
+      value: 
+      objectReference: {fileID: 4323745484167700519}
     - target: {fileID: 7883116691139366791, guid: 34d48e5dbed2e7d4c9a6b687af6a57a9,
         type: 3}
       propertyPath: m_Name
@@ -1267,12 +1272,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34d48e5dbed2e7d4c9a6b687af6a57a9, type: 3}
---- !u!1 &1048286266 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7883116691139366791, guid: 34d48e5dbed2e7d4c9a6b687af6a57a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7883116690499378109}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1048286264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7883116691139366789, guid: 34d48e5dbed2e7d4c9a6b687af6a57a9,
