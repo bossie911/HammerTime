@@ -6,8 +6,7 @@ public class AnimationsScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private GameObject hammer;
-    private bool smash;
+    [HideInInspector] public bool smash;
 
     void Update()
     {
@@ -27,19 +26,13 @@ public class AnimationsScript : MonoBehaviour
 
         if(smash)
         {
-            hammer.SetActive(true);
             animator.SetBool("Attack", true);
             animator.SetBool("RunArms", false);
             animator.SetBool("IdleArms", false);
         }
         else
         {
-            hammer.SetActive(false);
-        }
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            smash = !smash;
+            animator.SetBool("Attack", false);
         }
     }
 
