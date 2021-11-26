@@ -47,7 +47,6 @@ public class HammerScript : MonoBehaviour
                 UIObject.SetActive(false);
                 gameObject.SetActive(false);
                 GameEvents.current.StartChasing();
-                Debug.Log("Pasta");
             }
             else
             {
