@@ -12,6 +12,7 @@ public class AIFollowWaypoint : MonoBehaviour
     float timer = 0f;
 
     public bool isChasing = true;
+    public SphereCollider sphereCol;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class AIFollowWaypoint : MonoBehaviour
         int lastNode = player.GetComponent<TempPlayer>().nodes.Count - 1;
         currentWayPoint = player.GetComponent<TempPlayer>().nodes[lastNode];
         agent.destination = currentWayPoint.transform.position;
+
+        InvokeRepeating("TurnCollOff", 5f, 3f);
     }
 
     // Update is called once per frame
@@ -68,5 +71,17 @@ public class AIFollowWaypoint : MonoBehaviour
             }
 
         }
+    }
+
+    void TurnCollOff()
+    {
+        sphereCol.enabled = false;
+        StartCoroutine(ResetCol());
+    }
+
+    IEnumerator ResetCol()
+    {
+        yield return new WaitForSeconds(0.1f);
+        sphereCol.enabled = true;
     }
 }

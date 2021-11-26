@@ -777,6 +777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3523331104840775505}
   currentWayPoint: {fileID: 0}
+  isChasing: 1
+  sphereCol: {fileID: 4513437055466584303}
 --- !u!195 &3523331104840775505
 NavMeshAgent:
   m_ObjectHideFlags: 0
