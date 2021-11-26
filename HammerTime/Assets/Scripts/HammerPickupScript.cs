@@ -12,6 +12,7 @@ public class HammerPickupScript : MonoBehaviour
         {
             HammerScript.instance.hammerTime += timeValue;
             HammerScript.instance.StartHammering();
+            GameEvents.current.StartFleeing();
             Destroy(gameObject);
         }
     }
